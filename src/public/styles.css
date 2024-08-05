@@ -1,0 +1,70 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+input[type="text"] {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+button[type="submit"], .filter-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 5px 10px 0;
+  cursor: pointer;
+  border-radius: 4px;
+}
+button[type="submit"]:hover, .filter-btn:hover {
+  background-color: #0056b3;
+}
+.filters {
+  display: flex;
+  flex-direction: column;
+}
+.filter-btn {
+  width: auto;
+}
+.filter-options {
+  display: none;
+  background: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-top: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+.filter-options a {
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+  color: #007bff;
+}
+.filter-options a:hover {
+  background: #f1f1f1;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+th {
+  background-color: #007bff;
+  color: white;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferramentas de IA</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Buscar Ferramentas de IA</h1>
+    <form method="get" action="/">
+      <input type="text" name="search" value="<%= search %>" placeholder="Buscar por Nome da Ferramenta ou Categoria Principal">
+      
+      <div class="filters">
+        <button type="button" class="filter-btn" onclick="toggleFilter('filter2')">Filtro de Categoria</button>
+        <div id="filter2" class="filter-options">
+          <% categories.forEach(category => { %>
+            <a href="?search=<%= search %>&filterCategory=<%= category %>"><%= category %></a>
+          <% }) %>
+        </div>
+      </div>
+
+      <button type="submit">Buscar</button>
+    </form>
+
+    <% if (ias.length > 0) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Nome da Ferramenta de IA</th>
+            <th>Descrição</th>
+            <th>Grátis/Pago/Outro</th>
+            <th>Link da Ferramenta</th>
+            <th>Categoria Principal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% ias.forEach(function(ia) { %>
+            <tr>
+              <td><%= ia['AI Tool Name'] %></td>
+              <td><%= ia.Description %></td>
+              <td><%= ia['Free/Paid/Other'] %></td>
+              <td><a href="<%= ia['Tool Link'] %>"><%= ia['Tool Link'] %></a></td>
+              <td><%= ia['Major Category'] %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <p>Nenhum resultado encontrado.</p>
+    <% } %>
+  </div>
+  <script>
+    function toggleFilter(id) {
+      const filterDiv = document.getElementById(id);
+      filterDiv.style.display = filterDiv.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
